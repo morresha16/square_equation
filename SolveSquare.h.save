@@ -1,0 +1,35 @@
+#ifndef SOLVESQUARE_H_INCLUDED
+#define SOLVESQUARE_H_INCLUDED
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#define DEBUG
+
+double LinearEquation(double coef1, double coef2);
+bool IsZero(double number);
+bool IsEqual(double number1, double number2);
+int SolveSquare(double a, double b, double c, double* root1, double* root2);
+void OutputSolution(int nRoots, double root1, double root2);
+void InputCoeffitients(double* a, double* b, double* c);
+
+#ifdef
+void TestSolvingFunction();
+#endif
+
+enum Number_of_roots
+{
+                      //!Marks the case of infinity of roots
+    INF_ROOTS = -1,
+                      ///Marks the case of no roots
+    NO_ROOTS,
+                      ///Marks the case of one root
+    ONE_ROOT,
+                      ///Marks the case of two roots
+    TWO_ROOTS,
+};
+
+const double BORDER = 1e-100;
+
+#endif // SOLVESQUARE_H_INCLUDED
